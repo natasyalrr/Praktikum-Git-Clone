@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe Bootstrap - Testimoni</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #e0e0e0; /* abu muda seperti di wireframe */
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      background-color: #d9d9d9;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+    .box {
+      background-color: #f2f2f2; /* abu keputihan */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .footer {
+      background-color: #d9d9d9;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    h5 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header container-fluid">
+    <div class="row">
+      <div class="col-md-6 text-start">
+        Nama: <span>[Nama Kamu]</span>
+      </div>
+      <div class="col-md-6 text-end">
+        NIM: <span>[NIM Kamu]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Konten -->
+  <div class="container mt-3">
+    <div class="row">
+      <!-- Testimoni -->
+      <div class="col-md-6">
+        <div class="box">
+          <h5>Testimoni</h5>
+          <textarea class="form-control" rows="10" placeholder="Tulis testimoni kamu di sini..."></textarea>
+        </div>
+      </div>
+
+      <!-- Kritik & Saran -->
+      <div class="col-md-6">
+        <div class="box">
+          <h5>Kritik</h5>
+          <textarea class="form-control mb-3" rows="4" placeholder="Tulis kritik kamu di sini..."></textarea>
+          <h5>Saran</h5>
+          <textarea class="form-control" rows="3" placeholder="Tulis saran kamu di sini..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    FOOTER
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

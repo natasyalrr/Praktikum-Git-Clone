@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <title>Latihan 1: Highlight Teks Dinamis JQuery</title>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        /* CSS: Mendefinisikan class 'highlight-on' */
+        .highlight-on {
+            color: red; 
+            background-color: yellow; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PTIK FKIP UNS</h1>
+
+    <p>
+        <span class="target-highlight">
+            The Faculty of Teacher Training and Education, Sebelas Maret University, Surakarta is an Educational Personnel Education Institution (LPTK) which has 24 study programs in 6 majors. Each study program has its own characteristics in producing superior, strong and intelligent educational staff.
+        </span>
+    </p>
+
+    <p>
+        <span class="target-highlight">The Informatics and Computer Technology Education (PTIK)</span> study program is planned to take shelter in the management of the <span class="target-highlight">Engineering and Vocational Education (PTK)</span> department. This placement revises our previous statement, where the PTIK study program is under the P.MIPA department. PTIK is a study program that will produce graduates who are <span class="target-highlight">prioritized to teach in vocational/vocational programs</span>. So, it would be better if PTIK was under the PTK department which oversees vocational programs such as <span class="target-highlight">Building Engineering Education</span>, and <span class="target-highlight">Mechanical Engineering Education</span>. To meet the needs of lecturers in the field of information technology that cannot be met by the PTK department, PTIK will conduct <span class="target-highlight">resource sharing with the mathematics study program</span>.
+    </p>
+
+    <button id="tombolHighlight">Highlight Paragraf</button>
+
+    <script type="text/javascript">
+        // Deklarasi JQuery menggunakan fungsi document ready
+        $(document).ready(function(){
+            
+            // Menggunakan Selector ID untuk tombol dan Selector Class untuk teks
+            const $tombol = $("#tombolHighlight");
+            const $targetTeksList = $(".target-highlight");
+            
+            // 1. Menghubungkan fungsi ke event click tombol menggunakan JQuery .click()
+            $tombol.click(function() {
+                
+                // 2. Menggunakan JQuery .toggleClass()
+                // JQuery dapat menerapkan aksi pada SEMUA elemen yang dipilih sekaligus
+                $targetTeksList.toggleClass("highlight-on");
+                
+                // 3. Mengubah teks tombol secara dinamis
+                // JQuery .hasClass() menggantikan classList.contains()
+                // JQuery .text() menggantikan textContent
+                if ($targetTeksList.hasClass("highlight-on")) {
+                    $tombol.text("Hapus Highlight");
+                } else {
+                    $tombol.text("Highlight Paragraf");
+                }
+            });
+            
+        });
+    </script>
+
+</body>
+</html>–-

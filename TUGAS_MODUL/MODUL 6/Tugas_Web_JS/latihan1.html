@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Interaktif - Latihan 1 (Warna Paling Gelap)</title>
+    <style>
+        /* Palet Warna Final (Paling Gelap): Cokelat Pekat dan Beige Solid */
+        :root {
+            --color-primary-deep: #4E342E; /* Cokelat Sangat Pekat (Equals) */
+            --color-primary-light: #6D4C41; /* Cokelat Dalam (Operator) */
+            --color-text: #212121; /* Hitam untuk Teks */
+            --color-display-bg: #D7CCC8; /* Beige Sedang untuk Display (Cukup Gelap) */
+            --color-body-bg: #EAEAEA; /* Background Abu/Creamy Light Grey */
+            --color-card-bg: #FFFFFF; 
+            --color-number-btn: #BCAAA4; /* Tombol Angka (Taupe/Light Brown Pekat) */
+            --color-clear-btn: #8D6E63; /* Tombol C (Cokelat Medium) */
+        }
+        
+        body { 
+            font-family: "Times New Roman", Times, serif; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--color-body-bg); 
+            margin: 0;
+        }
+        
+        .calculator-body {
+            background-color: var(--color-card-bg);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3); /* Bayangan lebih gelap dan tebal */
+            width: 320px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: var(--color-primary-deep); 
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .display {
+            background-color: var(--color-display-bg); 
+            color: var(--color-text);
+            padding: 10px 15px;
+            height: 60px;
+            line-height: 40px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-size: 2.5em;
+            font-weight: 500;
+            overflow-x: auto;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Bayangan display lebih gelap */
+        }
+        
+        /* Grid 4x4 untuk Tombol */
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .buttons-grid button {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.1s;
+            font-weight: bold;
+            color: var(--color-text); /* Teks Tombol Angka */
+            background-color: var(--color-number-btn); /* Tombol Angka Pekat */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Tombol Operasi (+, -, x, ÷) */
+        .operator { 
+            background-color: var(--color-primary-light); /* Operator Cokelat Tua */
+            color: white !important;
+        } 
+
+        /* Tombol Equals (= dan ENTER) - Cokelat Paling Pekat */
+        .equals {
+            background-color: var(--color-primary-deep); 
+            color: white !important;
+        }
+        
+        /* Tombol Clear (C) */
+        .clear {
+            background-color: var(--color-clear-btn); 
+            color: white !important;
+        }
+
+        .buttons-grid button:hover {
+            opacity: 0.8;
+        }
+
+        .buttons-grid button:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator-body">
+        <h2>Kalkulator Sederhana</h2>
+
+        <div class="display" id="display">
+            0
+        </div>
+        
+        <div class="buttons-grid">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="appendOperator('/')">÷</button>
+            <button class="operator" onclick="appendOperator('*')">x</button>
+            <button class="equals" onclick="calculate()">=</button>
+
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendNumber('0')">0</button>
+            
+            <button onclick="appendNumber('.')">.</button>
+            <button onclick="calculate()" class="equals" style="grid-column: span 2; font-size: 1em;">ENTER</button>
+        </div>
+    </div>
+
+    <script src="scripts/main1.js"></script> 
+</body>
+</html>

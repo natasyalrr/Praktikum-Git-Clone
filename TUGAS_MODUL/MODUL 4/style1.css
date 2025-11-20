@@ -1,0 +1,52 @@
+/* Reset & font */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header (biru, ikut scroll) */
+.header {
+    background: #004080;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Navbar (sticky, nempel di browser) */
+.menu {
+    background: teal;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;        /* selalu nempel di atas browser */
+    z-index: 1000; /* biar ga ketimpa */
+}
+
+.menu a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background: #006666;
+}
+
+/* Video */
+.video-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+iframe {
+    width: 640px;
+    height: 360px;
+    border: none;
+}
+
+/* Konten */
+.content {
+    padding: 20px;
+}

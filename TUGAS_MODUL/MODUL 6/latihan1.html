@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { margin: 5px; padding: 10px; }
+        .result { font-weight: bold; margin-top: 20px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+
+    <h2>Kalkulator Sederhana</h2>
+
+    <input type="number" id="angka1" placeholder="Masukkan Angka Pertama">
+    <input type="number" id="angka2" placeholder="Masukkan Angka Kedua">
+
+    <br>
+
+    <button onclick="hitung('jumlah')">Jumlah (+)</button>
+    <button onclick="hitung('kurang')">Kurang (-)</button>
+    <button onclick="hitung('kali')">Kali (x)</button>
+    <button onclick="hitung('bagi')">Bagi (/)</button>
+
+    <div class="result" id="hasil">
+        Hasil: 
+    </div>
+
+    <script src="scripts/main1.js"></script> 
+</body>
+</html>

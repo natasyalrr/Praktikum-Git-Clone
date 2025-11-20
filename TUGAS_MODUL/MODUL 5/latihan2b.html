@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Desain Responsif Flexbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    #wrapper {
+      margin: auto;
+      width: 100%;
+    }
+    #header, #footer {
+      padding: 20px;
+      border: 2px solid red;
+      text-align: center;
+    }
+    #nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      border: 2px solid red;
+      padding: 20px;
+    }
+    .box {
+      flex: 1 1 200px;
+      margin: 10px;
+      padding: 20px;
+      background: red;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="header"><h2>Header</h2></div>
+    <div id="nav">
+      <div class="box">BOX 1</div>
+      <div class="box">BOX 2</div>
+      <div class="box">BOX 3</div>
+      <div class="box">BOX 4</div>
+    </div>
+    <div id="footer"><h2>Footer</h2></div>
+  </div>
+</body>
+</html>

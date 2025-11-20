@@ -1,0 +1,30 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #e1e1e1;
+}
+.header{
+    background: rgba(0, 0, 0, 0.9);
+    padding: 6px 24px;
+    text-align: left;
+    color: white;
+    margin: 0px;
+    letter-spacing: 1px;
+    font: caption;
+    font-size: 24px;
+    text-decoration: uppercase;
+}
+.video-container{
+    position: relative;
+    z-index: -1;
+    top: 0px;
+}
+.video-container iframe{
+    width: 100px;
+    height: 90vh;
+}
+.content{
+    padding: 0px 24px;
+    text-align: 0px 24px;
+    font-size: 20px;
+}

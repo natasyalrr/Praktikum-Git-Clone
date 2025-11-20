@@ -1,0 +1,75 @@
+/* Styling untuk bagian header (judul) */
+.header {
+    margin: 10px 15px;
+    padding: 5px 0;
+    background: cyan;
+    border-radius: 15px;
+}
+
+.header h1 {
+    color: blue;
+    text-align: center;
+    font-family: sans-serif;
+    text-shadow: 2px 2px #555;
+}
+
+/* Styling untuk container utama */
+.container {
+    margin: 10px 15px;
+    padding: 10px;
+    background: #ecfa91;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 12px;
+    border-radius: 15px;
+}
+
+/* Styling untuk bagian sidebar (menu) */
+.sidebar {
+    margin: 10px;
+    padding: 0 10px;
+    background: #90e07e;
+    grid-column: 1 / span 3;
+}
+
+.menu-list {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.menu-item {
+    margin: 10px 0;
+    background: green;
+    padding: 10px;
+}
+
+/* Styling untuk bagian konten utama */
+.main-content {
+    margin: 10px;
+    background: #90e07e;
+    grid-column: 4 / span 9;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+}
+
+.text-content {
+    color: #0b872c;
+}
+
+/* Styling untuk bagian footer */
+.footer {
+    margin: 10px 15px;
+    padding: 5px 0;
+    background: #e3b059;
+    border-radius: 15px;
+}
+
+.footer h3 {
+    color: #b03f25;
+    text-align: center;
+    font-family: monospace;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Menampilkan Logo UNS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    h3 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      font-style: italic;
+    }
+
+    .logo-uns {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      .logo-uns {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Menampilkan Logo UNS</h3>
+  <p>Logo di bawah ini hanya muncul jika layar browser Anda lebih dari 1024 piksel</p>
+
+  <div class="logo-uns">
+    <img src="uns-logo.png" alt="Logo UNS" width="200">
+  </div>
+</body>
+</html>

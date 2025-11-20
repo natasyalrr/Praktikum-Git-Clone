@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <title>Latihan 2: Jam Digital JQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        /* Mengatur Font Times New Roman untuk keseluruhan tampilan */
+        body { 
+            text-align: center; 
+            font-family: "Times New Roman", Times, serif; 
+            margin-top: 50px; 
+        }
+        /* Style untuk container box, dibuat mirip mockup */
+        .box-container {
+            border: 1px solid #ccc;
+            padding: 30px 40px;
+            width: 400px; 
+            margin: 0 auto; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #tanggal { 
+            font-size: 1.5em; 
+            font-weight: bold;
+            margin-bottom: 20px; 
+        }
+        #jam { 
+            font-size: 3em; 
+            font-weight: bold; 
+            margin: 10px 0 30px 0;
+            color: #333; 
+        }
+        #startStopBtn { 
+            padding: 8px 30px; 
+            font-size: 1em; 
+            cursor: pointer; 
+            border: 1px solid #000;
+            background-color: #f0f0f0; 
+            font-family: "Times New Roman", Times, serif; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box-container">
+        <div id="tanggal"></div> 
+        
+        <div id="jam"></div> 
+        
+        <button id="startStopBtn">START</button>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            let timer; // Variabel untuk ID setInterval
+            let isRunning = false; 
+
+            // Fungsi untuk memastikan AWALAN 0 (01, 09, dst.)
+            function formatTimeComponent(i) {
+                return (i < 10 ? "0" + i : i);
+            }
+
+            // Fungsi untuk update Jam dan Tanggal (MENGAMBIL TANGGAL HARI INI)
+            function updateClock() {
+                const now = new Date();
+                
+                // --- Ambil Waktu dan Format Awalan 0 ---
+                let hours = formatTimeComponent(now.getHours());
+                let minutes = formatTimeComponent(now.getMinutes());
+                let seconds = formatTimeComponent(now.getSeconds());
+
+                const timeString = hours + ":" + minutes + ":" + seconds;
+                
+                // --- Ambil Tanggal HARI INI dan Format ---
+                // toLocaleDateString digunakan untuk format Hari, Tanggal Bulan Tahun
+                const dateString = now.toLocaleDateString('id-ID', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                
+                // JQuery: Mengubah isi elemen HTML
+                $("#jam").html(timeString);
+                $("#tanggal").html(dateString);
+            }
+
+            // --- INISIALISASI TAMPILAN AWAL ---
+            // Tampilkan tanggal hari ini sebagai placeholder
+            updateClock();
+            // Tampilkan pesan instruksi awal
+            $("#jam").html("Klik START");
+            
+            // --- Logika Tombol Toggle START/STOP ---
+            $("#startStopBtn").click(function(){
+                if (!isRunning) {
+                    // --- FUNGSI START ---
+                    updateClock(); 
+                    // Mulai interval, update setiap 1000ms (1 detik)
+                    timer = setInterval(updateClock, 1000); 
+                    isRunning = true;
+                    // JQuery: Ubah Teks Tombol
+                    $(this).text("STOP");
+
+                } else {
+                    // --- FUNGSI STOP ---
+                    clearInterval(timer); 
+                    isRunning = false;
+                    // JQuery: Ubah Teks Tombol dan Pesan Jam
+                    $(this).text("START");
+                    $("#jam").html("STOPPED");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
